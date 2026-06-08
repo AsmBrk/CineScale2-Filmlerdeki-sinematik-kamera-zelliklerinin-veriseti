@@ -6,7 +6,7 @@ Bu proje, **BLM0463 Veri Madenciliğine Giriş** dersi dönem projesi kapsamınd
 Projenin tüm detaylarını, literatür karşılaştırmasını ve sonuç analizlerini içeren proje raporuna ve adım adım kodları anlattığım sunum videoma aşağıdan ulaşabilirsiniz:
 
 * **▶️ [Proje Sunum Videosunu İzle (YouTube)](https://youtu.be/1mhEUax6-rI)**
-* **📋 [Detaylı Proje Raporunu İncele (PDF)](file:///C:/Users/03asm/OneDrive/Masa%C3%BCst%C3%BC/BLM463_Proje_As%C4%B1mBurak%C3%96zt%C3%BCrk_22360859063.pdf)**
+* **📋 [Detaylı Proje Raporunu İncele (PDF)](https://github.com/AsmBrk/CineScale2-Filmlerdeki-sinematik-kamera-zelliklerinin-veriseti/blob/main/BLM463_Proje_As%C4%B1mBurak%C3%96zt%C3%BCrk_22360859063.pdf)**
 
 ## 📌 Proje Özeti
 Proje, görüntü işleme ve veri madenciliği tekniklerini birleştirmektedir. Orijinal veri setindeki ham görüntülerden **Ortalama RGB (Kırmızı, Yeşil, Mavi)** ve **Parlaklık** değerleri çıkarılarak iki farklı veri seti (tablo) oluşturulmuş ve bu veriler üzerinde **Karar Ağacı (Decision Tree)** modelleri eğitilmiştir.
