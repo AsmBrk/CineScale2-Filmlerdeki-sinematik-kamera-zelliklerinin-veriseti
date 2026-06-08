@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 
-# SADECE LEVEL KLASÖRÜNÜN YOLUNU BURAYA YAPIŞTIR (Baştaki 'r' harfini silme)
+
 veri_klasoru = r"C:\Users\03asm\OneDrive\Masaüstü\CineScale2\CineScale2\cinescale2\cinescale2\level" 
 
 veriler = []
@@ -28,7 +28,7 @@ for sinif_adi in os.listdir(veri_klasoru):
                         'G_Ortalama': np.mean(img_array[:, :, 1]),
                         'B_Ortalama': np.mean(img_array[:, :, 2]),
                         'Parlaklik': np.mean(img_array),
-                        'Seviye_Sinifi': sinif_adi # Hedef Değişkenimiz değişti
+                        'Seviye_Sinifi': sinif_adi 
                     })
                 except Exception:
                     continue
