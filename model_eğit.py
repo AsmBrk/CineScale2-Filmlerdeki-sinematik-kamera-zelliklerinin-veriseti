@@ -6,32 +6,28 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
 
-# 1. Veriyi Yükle
-# Dosya adının birebir aynı olduğundan emin ol
+
 df = pd.read_csv("cinescale_angle_veriseti.csv")
 
-# 2. Özellikleri (X) ve Hedefi (y) Ayır
+
 X = df[['R_Ortalama', 'G_Ortalama', 'B_Ortalama', 'Parlaklik']]
 y = df['Aci_Sinifi']
 
-# 3. Eğitim ve Test Setlerine Böl (%80 Eğitim, %20 Test)
+# Eğitim ve Test Setlerine Böl (%80 Eğitim, %20 Test)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# 4. Karar Ağacı (Decision Tree) Modelini Kur ve Eğit
-# max_depth=5 vererek ağacın çok karmaşıklaşıp ezberlemesini önlüyoruz
 dt_model = DecisionTreeClassifier(random_state=42, max_depth=5)
 dt_model.fit(X_train, y_train)
 
-# 5. Tahmin Yap
+# Tahmin 
 y_pred = dt_model.predict(X_test)
 
-# 6. Performans Metriklerini Hesapla 
 accuracy = accuracy_score(y_test, y_pred)
-# Sensitivity (Recall) ve F-measure (Çok sınıflı olduğu için makro ortalama kullanıyoruz)
+
 sensitivity = recall_score(y_test, y_pred, average='macro', zero_division=0)
 f_measure = f1_score(y_test, y_pred, average='macro', zero_division=0)
 
-# Specificity Hesaplama (Çok sınıflı matris üzerinden)
+
 cm = confusion_matrix(y_test, y_pred)
 specificity_list = []
 for i in range(len(cm)):
@@ -48,18 +44,17 @@ print(f"Specificity (Özgüllük)  : {specificity:.4f}")
 print(f"F-measure (F1-Skoru)    : {f_measure:.4f}")
 print("-" * 34)
 
-# 7. Görselleştirmeler 
-# İlk Grafik: Karmaşıklık Matrisi Isı Haritası
+
 plt.figure(figsize=(10, 7))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=dt_model.classes_, yticklabels=dt_model.classes_)
 plt.title('Karmaşıklık Matrisi (Confusion Matrix)')
 plt.xlabel('Tahmin Edilen Açı')
 plt.ylabel('Gerçek Açı')
-plt.show() # Bu pencereyi kapatınca ikinci grafik açılır
+plt.show() 
 
-# İkinci Grafik: Karar Ağacı Yapısı (Yüksek Çözünürlüklü)
-plt.figure(figsize=(40, 20)) # Tuval boyutunu devasa yaptık
+
+plt.figure(figsize=(40, 20)) 
 plot_tree(dt_model, filled=True, feature_names=X.columns, class_names=dt_model.classes_, rounded=True, fontsize=10)
 plt.title('Karar Ağacı Yapısı')
-plt.savefig("karar_agaci_net.png", dpi=300, bbox_inches='tight') # Bilgisayara direkt net halini kaydeder
+plt.savefig("karar_agaci_net.png", dpi=300, bbox_inches='tight') 
 plt.show()
