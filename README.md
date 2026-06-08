@@ -5,7 +5,7 @@ Bu proje, **BLM0463 Veri Madenciliğine Giriş** dersi dönem projesi kapsamınd
 ## 📄 Proje Raporu ve Sunum Videosu
 Projenin tüm detaylarını, literatür karşılaştırmasını ve sonuç analizlerini içeren proje raporuna ve adım adım kodları anlattığım sunum videoma aşağıdan ulaşabilirsiniz:
 
-* **▶️ [Proje Sunum Videosunu İzle (YouTube)]([https://youtu.be/1mhEUax6-rI])**
+* **▶️ [Proje Sunum Videosunu İzle (YouTube)](https://youtu.be/1mhEUax6-rI)**
 * **📋 [Detaylı Proje Raporunu İncele (PDF)](PDF_LİNKİ_BURAYA)**
 
 ## 📌 Proje Özeti
