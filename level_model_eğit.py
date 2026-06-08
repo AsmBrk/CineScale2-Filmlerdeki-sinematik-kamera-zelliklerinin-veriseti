@@ -53,7 +53,7 @@ plt.ylabel('Gerçek Seviye')
 plt.savefig("level_confusion_matrix.png", dpi=300, bbox_inches='tight')
 plt.show() 
 
-# B. Karar Ağacı Yapısı (Yüksek Çözünürlüklü)
+
 plt.figure(figsize=(40, 20)) 
 plot_tree(dt_model, filled=True, feature_names=X.columns, class_names=dt_model.classes_, rounded=True, fontsize=10)
 plt.title('Karar Ağacı Yapısı - Kamera Seviyesi (Level)')
