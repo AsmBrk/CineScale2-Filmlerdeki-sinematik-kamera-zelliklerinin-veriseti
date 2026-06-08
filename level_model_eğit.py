@@ -6,24 +6,23 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix
 
-# 1. Level verisini yükle
 df = pd.read_csv("cinescale_level_veriseti.csv")
 
-# 2. Özellikleri ve Hedefi Ayır
+
 X = df[['R_Ortalama', 'G_Ortalama', 'B_Ortalama', 'Parlaklik']]
 y = df['Seviye_Sinifi']
 
-# 3. Eğitim ve Test Setlerine Böl
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# 4. Karar Ağacı Modelini Kur ve Eğit (Daha önce konuştuğumuz gibi sınırlandırmıyoruz)
+
 dt_model = DecisionTreeClassifier(random_state=42, max_depth=5)
 dt_model.fit(X_train, y_train)
 
-# 5. Tahmin Yap
+
 y_pred = dt_model.predict(X_test)
 
-# 6. Performans Metriklerini Hesapla
+
 accuracy = accuracy_score(y_test, y_pred)
 sensitivity = recall_score(y_test, y_pred, average='macro', zero_division=0)
 f_measure = f1_score(y_test, y_pred, average='macro', zero_division=0)
@@ -44,14 +43,13 @@ print(f"Specificity (Özgüllük)  : {specificity:.4f}")
 print(f"F-measure (F1-Skoru)    : {f_measure:.4f}")
 print("-" * 40)
 
-# 7. Görselleştirmeler
-# A. Karmaşıklık Matrisi (Level için)
+
 plt.figure(figsize=(10, 7))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Oranges', xticklabels=dt_model.classes_, yticklabels=dt_model.classes_)
 plt.title('Karmaşıklık Matrisi - Level (Kamera Seviyesi)')
 plt.xlabel('Tahmin Edilen Seviye')
 plt.ylabel('Gerçek Seviye')
-# Kaydetme işlemi
+
 plt.savefig("level_confusion_matrix.png", dpi=300, bbox_inches='tight')
 plt.show() 
 
