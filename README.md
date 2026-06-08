@@ -2,6 +2,12 @@
 
 Bu proje, **BLM0463 Veri Madenciliğine Giriş** dersi dönem projesi kapsamında geliştirilmiştir. Projenin amacı, sinematik görüntü çerçevelerinin (CineScale2 veri seti) kamera açısı (Angle) ve kamera seviyesi (Level) parametrelerini makine öğrenmesi algoritmaları kullanarak otomatik olarak sınıflandırmaktır.
 
+## 📄 Proje Raporu ve Sunum Videosu
+Projenin tüm detaylarını, literatür karşılaştırmasını ve sonuç analizlerini içeren proje raporuna ve adım adım kodları anlattığım sunum videoma aşağıdan ulaşabilirsiniz:
+
+* **▶️ [Proje Sunum Videosunu İzle (YouTube)]((https://youtu.be/1mhEUax6-rI))**
+* **📋 [Detaylı Proje Raporunu İncele (PDF)](PDF_LİNKİ_BURAYA)**
+
 ## 📌 Proje Özeti
 Proje, görüntü işleme ve veri madenciliği tekniklerini birleştirmektedir. Orijinal veri setindeki ham görüntülerden **Ortalama RGB (Kırmızı, Yeşil, Mavi)** ve **Parlaklık** değerleri çıkarılarak iki farklı veri seti (tablo) oluşturulmuş ve bu veriler üzerinde **Karar Ağacı (Decision Tree)** modelleri eğitilmiştir.
 
